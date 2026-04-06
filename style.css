@@ -142,3 +142,148 @@ button:hover {
   font-size: 48px;
   margin-bottom: 20px;
 }
+
+/* NASA Branding: Override the default light background/text with NASA's dark space theme */
+
+body {
+  background-color: #0a0a0a;   
+  color: #ffffff;
+}
+
+.site-header {
+  background-color: #0b3d91;   
+  border-bottom: 4px solid #fc3d21;  
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+h1 {
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Override the starter gray button with NASA red */
+button {
+  background-color: #fc3d21;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #d63418;
+}
+
+/* Dark background for the date inputs to match the theme */
+input[type="date"] {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+/* Gallery card dark theme + pointer cursor: Overrides the starter white cardbackground */
+.gallery-item {
+  background: #111827;
+  border: 1px solid #222;
+  cursor: pointer;          /* shows hand cursor so users know cards are clickable */
+  transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);   /* subtle zoom on hover */
+}
+
+.gallery-item p {
+  color: #cccccc;
+}
+
+/* Loading and error message styles for script when waiting for or failing the API */
+.loading-msg {
+  flex: 1 1 100%;
+  text-align: center;
+  padding: 40px;
+  color: #aad4f5;
+  font-size: 1.1rem;
+}
+
+.error-msg {
+  flex: 1 1 100%;
+  text-align: center;
+  padding: 40px;
+  color: #fc3d21;
+}
+
+/* The modal is hidden by default (display: none).
+   script.js adds the .active class to show it. */
+.modal-overlay {
+  display: none;             /* hidden until .active is added */
+  position: fixed;           /* covers the entire screen */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);  /* dark transparent backdrop */
+  z-index: 1000;             /* sits above everything else */
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;          /* allow scrolling if explanation is long */
+  padding: 2rem 1rem;
+}
+
+.modal-overlay.active {
+  display: flex;             
+}
+
+.modal-content {
+  background: #0d1117;
+  border: 1px solid #333;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;        /* the close button can be positioned inside */
+  margin: auto;
+}
+
+/* Close button — round red X in the top-right corner of the modal */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #fc3d21;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+/* Large image inside the modal */
+#modalImg {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;       /* keeps full image visible without cropping */
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+#modalTitle {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+#modalDate {
+  color: #fc3d21;            /* NASA red for the date */
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+#modalExplanation {
+  color: #cccccc;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
